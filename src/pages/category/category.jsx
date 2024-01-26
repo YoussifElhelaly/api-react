@@ -9,11 +9,6 @@ export default function Category() {
 
     const [products, setProducts] = useState()
 
-    async function getData() {
-
-    }
-
-
 
     useEffect(() => {
         try {
