@@ -1,0 +1,20 @@
+.productDetails {
+    padding: 150px;
+}
+
+.productDetails .container .imgs {
+    display: flex;
+
+}
+
+.productDetails .container > .img {
+    width: 50%;
+}
+
+.productDetails .container {
+    display: flex;
+}
+
+.productDetails .container .imgs .img.active {
+    border: 6px solid black;
+}
