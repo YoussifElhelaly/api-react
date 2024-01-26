@@ -20,7 +20,7 @@ export default function ProductDetails() {
                 );
         } catch (err) {
         }
-    }, [])
+    }, [params.ProductId])
 
     console.log(product)
 
@@ -34,7 +34,7 @@ export default function ProductDetails() {
                             product?.images.map((img, index) => {
                                 console.log(img)
                                 return (
-                                    <div key={index} className={`img ${img == mainImg && "active" }`} onClick={() => {
+                                    <div key={index} className={`img ${img === mainImg && "active" }`} onClick={() => {
                                         setMainImg(img)
                                     }}>
                                         <img src={img} alt="" />

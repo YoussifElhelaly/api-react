@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Box from "../../components/box/box"
 import LayoutCategory from "../../components/layoutCategory/layoutCategory"
 
@@ -10,19 +10,19 @@ export default function Category() {
     const [products, setProducts] = useState()
 
     async function getData() {
-        try {
-            let res = await fetch(`https://dummyjson.com/products/category/${params.categoryTitle}`)
-            let data = await res.json()
-            setProducts(data.products)
-        } catch (err) {
-            console.log(err)
-        }
+
     }
 
 
 
     useEffect(() => {
-        getData()
+        try {
+            fetch(`https://dummyjson.com/products/category/${params.categoryTitle}`)
+                .then((res) => res.json())
+                .then((data) => setProducts(data.products))
+        } catch (err) {
+            console.log(err)
+        }
     }, [params])
 
     return (
